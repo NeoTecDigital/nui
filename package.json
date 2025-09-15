@@ -1,0 +1,56 @@
+{
+  "name": "@nui/monorepo",
+  "version": "0.1.0",
+  "description": "DaisyUI-powered Svelte component library with shadcn-svelte API compatibility",
+  "author": {
+    "name": "NUI Team",
+    "url": "https://github.com/nui-dev"
+  },
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.0.0",
+  "scripts": {
+    "build": "pnpm build:packages",
+    "build:packages": "pnpm -r -F \"./packages/**\" build",
+    "build:docs": "pnpm -F docs build",
+    "dev": "pnpm -F docs dev",
+    "dev:packages": "pnpm -F \"./packages/**\" --parallel --reporter append-only --color dev",
+    "preview": "pnpm -F docs preview",
+    "test": "pnpm -F nui test",
+    "test:components": "pnpm -F nui test:components",
+    "test:integration": "pnpm -F nui test:integration",
+    "check": "pnpm -F docs check && pnpm -F \"./packages/**\" check",
+    "lint": "prettier --check . && eslint .",
+    "format": "prettier --write .",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm build:packages && pnpm -r sync"
+  },
+  "engines": {
+    "pnpm": ">=9",
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nui-dev/nui.git"
+  },
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "@eslint/compat": "^1.3.0",
+    "@eslint/js": "^9.29.0",
+    "@types/node": "^22.15.30",
+    "eslint": "^9.28.0",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-svelte": "^3.9.2",
+    "globals": "^16.2.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-svelte": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.6.12",
+    "svelte": "^5.34.1",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.0",
+    "vitest": "^2.0.0"
+  }
+}

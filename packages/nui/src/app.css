@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+/* DaisyUI component overrides for enhanced shadcn-svelte compatibility */
+:root {
+	/* Enhanced focus ring styles */
+	--focus-ring: 2px solid hsl(var(--p) / 0.5);
+	--focus-ring-offset: 2px;
+}
+
+/* Global focus-visible styles */
+*:focus-visible {
+	outline: var(--focus-ring);
+	outline-offset: var(--focus-ring-offset);
+}
+
+/* Button enhancements */
+.btn {
+	@apply transition-all duration-200;
+}
+
+.btn:focus-visible {
+	@apply ring-2 ring-primary/50 ring-offset-2;
+}
+
+/* Input enhancements */
+.input:focus,
+.textarea:focus,
+.select:focus {
+	@apply border-primary ring-2 ring-primary/20;
+}
+
+/* Card enhancements */
+.card {
+	@apply transition-shadow duration-200;
+}
+
+.card:hover {
+	@apply shadow-lg;
+}
+
+/* Alert enhancements */
+.alert {
+	@apply border;
+}
+
+/* Progress enhancements */
+.progress {
+	@apply transition-all duration-300;
+}
+
+/* Animation utilities for component state changes */
+@keyframes accordion-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-accordion-content-height);
+	}
+}
+
+@keyframes accordion-up {
+	from {
+		height: var(--radix-accordion-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+@keyframes collapsible-down {
+	from {
+		height: 0;
+	}
+	to {
+		height: var(--radix-collapsible-content-height);
+	}
+}
+
+@keyframes collapsible-up {
+	from {
+		height: var(--radix-collapsible-content-height);
+	}
+	to {
+		height: 0;
+	}
+}
+
+.animate-accordion-down {
+	animation: accordion-down 0.2s ease-out;
+}
+
+.animate-accordion-up {
+	animation: accordion-up 0.2s ease-out;
+}
+
+.animate-collapsible-down {
+	animation: collapsible-down 0.2s ease-out;
+}
+
+.animate-collapsible-up {
+	animation: collapsible-up 0.2s ease-out;
+}
