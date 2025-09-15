@@ -1,0 +1,72 @@
+import { A as f, m as i, G as p, k as _, T as h, I as E, h as d, c as o, t as T, J as g, r as y } from "./B7HyO7zA.js";
+function N(r) {
+  var t = document.createElement("template");
+  return t.innerHTML = r.replaceAll("<!>", "<!---->"), t.content;
+}
+function n(r, t) {
+  var e = (
+    /** @type {Effect} */
+    _
+  );
+  e.nodes_start === null && (e.nodes_start = r, e.nodes_end = t);
+}
+// @__NO_SIDE_EFFECTS__
+function A(r, t) {
+  var e = (t & h) !== 0, c = (t & E) !== 0, a, m = !r.startsWith("<!>");
+  return () => {
+    if (d)
+      return n(o, null), o;
+    a === void 0 && (a = N(m ? r : "<!>" + r), e || (a = /** @type {Node} */
+    i(a)));
+    var s = (
+      /** @type {TemplateNode} */
+      c || p ? document.importNode(a, !0) : a.cloneNode(!0)
+    );
+    if (e) {
+      var l = (
+        /** @type {TemplateNode} */
+        i(s)
+      ), v = (
+        /** @type {TemplateNode} */
+        s.lastChild
+      );
+      n(l, v);
+    } else
+      n(s, s);
+    return s;
+  };
+}
+function M(r = "") {
+  if (!d) {
+    var t = f(r + "");
+    return n(t, t), t;
+  }
+  var e = o;
+  return e.nodeType !== g && (e.before(e = f()), y(e)), n(e, e), e;
+}
+function I() {
+  if (d)
+    return n(o, null), o;
+  var r = document.createDocumentFragment(), t = document.createComment(""), e = f();
+  return r.append(t, e), n(t, e), r;
+}
+function L(r, t) {
+  if (d) {
+    _.nodes_end = o, T();
+    return;
+  }
+  r !== null && r.before(
+    /** @type {Node} */
+    t
+  );
+}
+const w = "5";
+var u;
+typeof window < "u" && ((u = window.__svelte ?? (window.__svelte = {})).v ?? (u.v = /* @__PURE__ */ new Set())).add(w);
+export {
+  L as a,
+  n as b,
+  I as c,
+  A as f,
+  M as t
+};
