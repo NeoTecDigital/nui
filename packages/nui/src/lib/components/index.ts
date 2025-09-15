@@ -55,6 +55,8 @@ export * from "./context-menu/index.js";
 export * from "./checkbox/index.js";
 export * from "./radio-group/index.js";
 export * from "./select/index.js";
+export * from "./combobox/index.js";
+export * from "./date-picker/index.js";
 export * from "./slider/index.js";
 export * from "./switch/index.js";
 export * from "./textarea/index.js";
